@@ -1,2 +1,3 @@
 export{default as NavBar} from './NavBar';
-export {default as Sidebar} from './Sidebar';
+export {default as SideBar} from './Sidebar';
+export{default as navBarButton} from './navBarButton';
