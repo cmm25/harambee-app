@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Harambee_details = () => {
+const HarambeeDetails = () => {
   return (
     <div>Harambee_details</div>
   )
 }
 
-export default Harambee_details
+export default HarambeeDetails
