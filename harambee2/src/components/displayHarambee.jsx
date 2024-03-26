@@ -8,7 +8,7 @@ import FundCard from './FundCard';
 const DisplayHarambee = ({title, isLoading, campaigns}) => {
     const navigate = useNavigate()
     const handleNavigate = (campaign) => {
-        navigate(`/campaign-details/${campaign.title}`, { state: campaign })
+        navigate(`/harambee-details/${campaign.title}`, { state: campaign })
     }
     return (
         <div>
