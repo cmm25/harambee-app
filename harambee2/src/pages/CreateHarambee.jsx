@@ -1,14 +1,15 @@
 import React,{useState} from 'react';
 import { Form, useNavigate } from 'react-router-dom';
-import ethers from 'ethers';
+import{ ethers} from 'ethers';
 import { money } from '../assets';
 import { CustomButton,FormField } from '../components';
 import { useStateContext} from '../context';
 import { checkIfimage } from '../utils';
 const CreateHarambee = () => {
  const navigate=useNavigate();
- const[isLoading,setLoading]=useState(false); 
+ const[isLoading, setIsLoading]=useState(false); 
  const {createHarambee} = useStateContext()
+
  //harambee details
  const[form,setForm]=useState({
   name:'',
