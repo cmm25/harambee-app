@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Sidebar, NavBar } from './components';
-import {HarambeeDetails, CreateHarambee, Harambee_details, Home, Profile } from './pages';
+import {HarambeeDetails, CreateHarambee, Home, Profile } from './pages';
 const App = () => {
   return (
     <div className="relative sm:-8 p-4 bg-[#ECC194] min-h-screen flex flex-row">
@@ -16,7 +16,7 @@ const App = () => {
           <Route path="/" element={<Home/>} />
           <Route path="/create-harambee" element={<CreateHarambee />} />
           <Route path="/profile" element={<Profile/>} />
-          <Route path="/harambee-details" element={<HarambeeDetails />} />
+          {/* <Route path="/harambee-details" element={<HarambeeDetails />} /> */}
         </Routes>
       </div>
     </div>
