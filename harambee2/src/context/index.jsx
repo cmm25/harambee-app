@@ -28,11 +28,16 @@ export const StateContextProvider = ({children})=>{
         }
         
     }
+    const getCampaigns = async () =>{
+        const campaigns = await contract.call('getCampaigns')
+        console.log(campaigns)
+    }
     return <StateContext.Provider
         value={{
             address,
             contract,
             connect,
+            getCampaigns,
             createHarambee: publishHarambee
         }}
     >
