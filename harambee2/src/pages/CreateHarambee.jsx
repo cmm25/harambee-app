@@ -1,12 +1,14 @@
 import React,{useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 import ethers from 'ethers';
 import { money } from '../assets';
 import { CustomButton,FormField } from '../components';
-
+import { useStateContext} from '../context';
+import { checkIfimage } from '../utils';
 const CreateHarambee = () => {
  const navigate=useNavigate();
  const[isLoading,setLoading]=useState(false); 
+ const {createHarambee} = useStateContext()
  //harambee details
  const[form,setForm]=useState({
   name:'',
@@ -22,8 +24,20 @@ const CreateHarambee = () => {
   setForm({ ...form, [fieldName]: e.target.value })
 }
 
- const handleSubmit=()=>{
-
+ const handleSubmit=async(e)=>{
+  e.preventDefault();
+  checkIfimage(form.image,async(exits)=>{
+    if(exits){
+      setIsLoading(true)
+      await createHarambee({...form, target:ethers.utils.parseUnits(form.target,18)})
+      setIsLoading(false)
+      navigate('/')
+    } else {
+      alert('Provide valid URL')
+      setForm({...form, image:''})
+    }
+  })
+  console.log(form)
 }
 
   return (
